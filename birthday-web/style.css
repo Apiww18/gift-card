@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(180deg, #ff8fab, #ffc2d1);
+    overflow: hidden;
+}
+
+
+/* ===== OPENING ===== */
+
+.opening {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, #ffafcc, #ffc8dd);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.opening-container {
+    text-align: center;
+    color: white;
+    animation: fadeUp 1.2s forwards;
+}
+
+.opening-name {
+    font-size: 38px;
+    font-weight: 800;
+    margin: 20px 0;
+}
+
+.opening-btn {
+    padding: 14px 40px;
+    border-radius: 50px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* ===== BIRTHDAY ===== */
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.text {
+    font-size: 24px;
+    font-weight: 800;
+    opacity: 0;
+    animation: fadeUp 1s forwards;
+}
+
+.delay1 {
+    animation-delay: 1s;
+}
+
+.delay2 {
+    animation-delay: 2.5s;
+}
+
+.delay3 {
+    animation-delay: 4s;
+}
+
+button {
+    margin-top: 30px;
+    padding: 14px 28px;
+    border-radius: 40px;
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.gift {
+    font-size: 90px;
+    display: none;
+    animation: shake 0.6s infinite;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* ===== SOFT & PERMANENT GIFT MESSAGE ANIMATION ===== */
+
+.gift-message {
+    display: none;
+    opacity: 0;
+    transform: scale(0.95);
+    filter: blur(3px);
+}
+
+.gift-message.show {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+    animation: openGiftText 2.5s ease-out forwards;
+}
+
+
+/* teks per baris */
+
+.gift-message span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+
+/* animasi muncul perlahan */
+
+.gift-message.show span {
+    animation: textSoftFade 1.8s ease-out forwards;
+}
+
+
+/* delay tiap baris (lebih pelan & romantis) */
+
+.gift-message.show span:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.gift-message.show span:nth-child(3) {
+    animation-delay: 1.1s;
+}
+
+.gift-message.show span:nth-child(5) {
+    animation-delay: 1.7s;
+}
+
+.gift-message.show span:nth-child(7) {
+    animation-delay: 2.3s;
+}
+
+.gift-message.show span:nth-child(9) {
+    animation-delay: 2.9s;
+}
+
+.gift-message.show span:nth-child(11) {
+    animation-delay: 3.5s;
+}
+
+.gift-message.show span:nth-child(13) {
+    animation-delay: 4.1s;
+}
+
+.gift-message.show span:nth-child(15) {
+    animation-delay: 4.7s;
+}
+
+.gift-message.show span:nth-child(17) {
+    animation-delay: 5.3s;
+}
+
+.gift-message.show span:nth-child(19) {
+    animation-delay: 5.9s;
+}
+
+
+/* animasi buka kado (halus) */
+
+@keyframes openGiftText {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+        filter: blur(4px);
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+
+/* animasi teks lembut */
+
+@keyframes textSoftFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ===== HEART ===== */
+
+.heart {
+    position: absolute;
+    bottom: -20px;
+    animation: floatUp 6s linear infinite;
+}
+
+
+/* ===== KEYFRAMES ===== */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes openGiftText {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes textPop {
+    from {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-120vh);
+    }
+}
+
+
+/* ===== ROMANTIC GLOW ===== */
+
+.gift-message {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 25px 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.4);
+}
+
+
+/* Text romantic effect */
+
+.gift-message span {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+
+/* ===== CONFETTI ===== */
+
+.confetti {
+    position: fixed;
+    top: -10px;
+    font-size: 18px;
+    animation: confettiFall linear forwards;
+    pointer-events: none;
+}
+
+@keyframes confettiFall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
